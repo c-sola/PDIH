@@ -7,4 +7,4 @@ Este repositorio contiene las prácticas y seminarios de la asignatura **Perifé
 - Se incluye documentación, código y archivos adicionales según los requisitos de cada actividad.
 
 ## Trabajo en Parejas
-En este caso, el trabajo es desarrollado junto con **Mario Casas**, alumno también de la asignatura.
+En este caso, las prácticas son desarrolladas junto con **Mario Casas**, alumno también de la asignatura.
