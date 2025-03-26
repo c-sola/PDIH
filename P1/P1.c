@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <dos.h>
+#include <conio.h>
 
 #define BLACK 0
 #define BLUE 1
@@ -109,7 +110,7 @@ unsigned int getvideomode(void)
 }
 
 // Obtenemos el caracter del teclado y lo mostramos por la pantalla
-void getche()
+void mi_getche()
 {
 	int tmp;
 	printf("\nPulsa una tecla: ");
@@ -530,7 +531,8 @@ void dibujaPerro()
 	mi_pausa(); // Detener la ejecucion para observar el dibujo
 }
 
-void dibuja_serpiente(){
+void dibuja_serpiente()
+{
 
 	clrscr(); // Borra la pantalla antes de dibujar
 
@@ -906,52 +908,35 @@ void escribirConFondo()
 	cputchar(caracter);
 }
 
-void imprimir_cadena(int x, int y, int length, char *text) {
-    
-    int i;
-    gotoxy(x, y);  // Posiciona el cursor
-   
-    for (i = 0; i < length && text[i] != '\0'; i++) {
-        cputchar(text[i]);  // Imprime cada carácter de la cadena
+void imprimir_cadena(int x, int y, int length, char *text)
+{
+	int i;
+	gotoxy(x, y); // Posiciona el cursor
+
+	for (i = 0; i < length && text[i] != '\0'; i++)
+	{
+		cputchar(text[i]); // Imprime cada carácter de la cadena
 		y++;
 		gotoxy(x, y);
-    }
+	}
 }
 
-void obtener_posicion_cursor(int *fila, int *columna) {
-    union REGS inregs, outregs;
-    
-    inregs.h.ah = 0x03;  // Obtener posición del cursor
-    inregs.h.bh = 0x00;  // Página de pantalla
-    
-    int86(0x10, &inregs, &outregs);  
+void obtener_posicion_cursor(int *fila, int *columna)
+{
+	union REGS inregs, outregs;
 
-    // DL (columna) y DH (fila)
-    *columna = outregs.h.dl;
-    *fila = outregs.h.dh;
+	inregs.h.ah = 0x03; // Obtener posición del cursor
+	inregs.h.bh = 0x00; // Página de pantalla
+
+	int86(0x10, &inregs, &outregs);
+
+	// DL (columna) y DH (fila)
+	*columna = outregs.h.dl;
+	*fila = outregs.h.dh;
 }
 
-int main() {
-	
-    int fila, columna;
-	
-    clrscr();
-
-    gotoxy(5,10);
-    obtener_posicion_cursor(&fila, &columna);
-    printf("%d,%d\n", fila, columna);
-
-    gotoxy(10,20);
-    obtener_posicion_cursor(&fila, &columna);
-    printf("%d,%d\n", fila, columna);
-
-    gotoxy(12,40);
-    obtener_posicion_cursor(&fila, &columna);
-    printf("%d,%d\n", fila, columna);
-
-    gotoxy(20,8);
-    obtener_posicion_cursor(&fila, &columna);
-    printf("%d,%d\n", fila, columna);
-    
-    mi_pausa();
+int main()
+{
+	clrscr();
+	dibuja_serpiente();
 }
