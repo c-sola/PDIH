@@ -1,0 +1,127 @@
+%Parte frontal de la tarjeta en la primera página
+/tarjeta {
+  newpath
+    0 0 moveto
+    612 0 lineto
+    612 792 lineto
+    0 792 lineto
+  closepath
+  1 setgray fill
+
+  %La tarjeta será rectangular
+  newpath
+    106 271 moveto
+    400 0 rlineto
+    0 250 rlineto
+    -400 0 rlineto
+  closepath
+  0.8 0.63 0.21 setrgbcolor    %Vamos a usar un color marrón
+  fill
+  stroke
+
+  %Formas geométricas
+  gsave
+    306 396 translate
+    5 setlinewidth
+    0 0 0 setrgbcolor
+
+    %Círculo en la parte izquierda
+    newpath
+      -90 0 35 0 360 arc
+    closepath
+    stroke
+
+    %Tríangulo en la parte central
+    newpath
+      0 35 moveto
+      -43.3 -35 lineto
+      43.3 -35 lineto
+    closepath
+    stroke
+
+    %Cuadrado en la parte derecha
+    newpath
+      65 -35 moveto
+      70 0 rlineto
+      0 70 rlineto
+      -70 0 rlineto
+    closepath
+    stroke
+  grestore
+} def
+
+%Parte trasera de la tarjeta en la segunda página
+/tarjeta2 {
+  newpath
+    0 0 moveto
+    612 0 lineto
+    612 792 lineto
+    0 792 lineto
+  closepath
+  1 setgray fill
+
+  %La tarjeta será rectangular
+  newpath
+    106 271 moveto
+    400 0 rlineto
+    0 250 rlineto
+    -400 0 rlineto
+  closepath
+  0.8 0.63 0.21 setrgbcolor   %Igual que antes, usamos un color marrón
+  fill
+  stroke
+
+  gsave
+    306 396 translate    
+    -80 0 translate 
+
+    %Dibujo del círculo que envolverá la casa
+    newpath
+      0 0 18.93 0 360 arc
+    closepath
+    2 setlinewidth    % Línea fina
+    0 setgray
+    stroke
+
+    %Dibujo de la casa
+    gsave
+      0 -6.07 translate    % Ajusta la posición de la casa
+      2 setlinewidth       % Línea fina para la casa
+      0 setgray
+
+      %Cuadrado
+      newpath
+        -10 -9 moveto
+        20 0 rlineto
+        0 18 rlineto
+        -20 0 rlineto
+      closepath
+      stroke
+
+      %Triángulo
+      newpath
+        -10 10 moveto
+        10 10 lineto
+        0 24 lineto
+      closepath
+      stroke
+    grestore
+
+    %Escribimos los números de la tarjeta
+    /Times-Roman findfont 24 scalefont setfont
+    newpath
+      40 -10 moveto
+      (8650 4006) show
+    stroke
+  grestore
+} def
+
+% PÁGINA 1: dibujamos la parte frontal de la tarjeta
+<< /PageSize [612 792] >> setpagedevice
+tarjeta
+showpage
+
+% PÁGINA 2: dibujamos la parte trasera de la tarjeta
+<< /PageSize [612 792] >> setpagedevice
+tarjeta2
+showpage

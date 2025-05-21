@@ -1,0 +1,72 @@
+
+<< /PageSize [792 612] >> setpagedevice
+
+gsave
+  %Nos situamos en el centro
+  396 306 translate
+  
+  %Primer circulo de radio 260, un poco más grande que el resto, color magenta
+  newpath
+    0 0 260 0 360 arc
+  closepath
+  1 0 1 setrgbcolor
+  fill
+  
+  %Segundo círculo de radio 200, color rojo
+  newpath
+    0 0 200 0 360 arc
+  closepath
+  1 0 0 setrgbcolor
+  fill
+  
+  %Tercer círculo de radio 160, color naranja
+  newpath
+    0 0 160 0 360 arc
+  closepath
+  1 0.5 0 setrgbcolor
+  fill
+  
+  %Cuarto círculo de radio 120, color verde
+  newpath
+    0 0 120 0 360 arc
+  closepath
+  0 1 0 setrgbcolor
+  fill
+  
+  %Quinto círculo de radio 80, color azul
+  newpath
+    0 0 80 0 360 arc
+  closepath
+  0 0 1 setrgbcolor
+  fill
+grestore
+
+%Dibujamos la cara en el centro
+gsave
+  %Reestablecemos la CTM y trasladamos
+  initmatrix
+  396 306 translate
+  
+  %Escalamos la imagen
+  100 100 scale
+  
+  -0.5 -0.5 translate
+  
+  %Dibujamos la imagen
+  12 10 8 [12 0 0 -10 0 10]
+  {<
+    ffffffffffffffffffffffff
+    ffaaaaaaaaaaaaaaaaaaaaff
+    ffaaaaaaaaaaaaaaaaaaaaff
+    ffaaaa0000aaaa0000aaaaff
+    ffaaaaaaaaaaaaaaaaaaaaff
+    ffaaaaaaaaaaaaaaaaaaaaff
+    ffaaaa00aaaaaaaa00aaaaff
+    ffaaaaaa00000000aaaaaaff
+    ffaaaaaaaaaaaaaaaaaaaaff
+    ffffffffffffffffffffffff
+  >}
+  image
+grestore
+
+showpage

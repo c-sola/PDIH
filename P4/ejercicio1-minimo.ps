@@ -1,0 +1,82 @@
+%!PS
+
+% --- Árbol grande ---
+
+% Tronco
+newpath
+120 140 moveto
+0 300 rlineto
+70 0 rlineto
+0 -300 rlineto
+closepath
+0.4 0.2 0 setrgbcolor  % marrón
+fill
+
+% Copa con 3 círculos verdes
+0 0.6 0 setrgbcolor  % verde
+
+gsave
+  155 500 translate      
+  0.8 1.5 scale           
+  0 0 100 0 360 arc      
+  0 0.6 0 setrgbcolor    
+  fill
+grestore                 % Restaurar sistema de coordenadas original
+
+gsave
+  215 550 translate      
+  0.7 1.5 scale            
+  0 0 100 0 360 arc      
+  0 0.6 0 setrgbcolor    
+  fill
+grestore 
+
+gsave
+  120 600 translate     
+  0.8 1.5 scale            
+  0 0 100 0 360 arc      
+  0 0.6 0 setrgbcolor    
+  fill
+grestore 
+
+
+% --- Árbol pequeño ---
+
+% Tronco
+newpath
+400 140 moveto     
+0 180 rlineto      
+40 0 rlineto
+0 -180 rlineto
+closepath
+0.4 0.2 0 setrgbcolor
+fill
+
+% Copa con 3 círculos verdes
+0 0.6 0 setrgbcolor
+
+newpath
+440 340 80 0 360 arc
+fill
+
+newpath
+375 380 75 0 360 arc
+fill
+
+newpath
+435 450 75 0 360 arc
+fill
+
+% --- Círculo ---
+newpath
+295 165 25 0 360 arc   % 165 = 140 + 25
+0 0.8 0 setrgbcolor
+fill
+
+newpath
+295 165 25 0 360 arc
+1 0 0 setrgbcolor
+2 setlinewidth
+stroke
+
+showpage

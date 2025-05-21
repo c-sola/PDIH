@@ -1,0 +1,58 @@
+%!PS
+
+% Fondo de la Tarjeta
+newpath
+180 560 moveto
+380 0 rlineto
+0 160 rlineto
+-380 0 rlineto
+closepath
+0.6 0.85 1.0 setrgbcolor   % Azul Claro
+fill
+
+% Logo de la Tarjeta
+newpath
+220 660 30 0 360 arc
+1 1 1 setrgbcolor   % Círculo blanco
+fill
+
+% Diferentes tipos de azul
+newpath
+220 660 25 0 180 arc closepath
+0.2 0.5 0.9 setrgbcolor   
+fill
+
+newpath
+220 660 20 180 360 arc closepath
+0.0 0.7 1.0 setrgbcolor   
+fill
+
+% Texto de la Tarjeta
+/Helvetica findfont 24 scalefont setfont
+0 0 0 setrgbcolor
+270 690 moveto
+(Feria Internacional) show
+
+/Helvetica findfont 24 scalefont setfont
+270 660 moveto
+(de ) show
+
+/Helvetica-Bold findfont 24 scalefont setfont
+(Empleo) show
+
+/Helvetica findfont 24 scalefont setfont
+270 630 moveto
+(de Granada) show
+
+% Lugar y Fecha
+/Helvetica findfont 16 scalefont setfont
+0 0 0 setrgbcolor
+270 600 moveto
+(Palacio de Congresos) show
+
+/Helvetica findfont 16 scalefont setfont
+270 580 moveto
+(Mayo 2025) show
+
+showpage
+

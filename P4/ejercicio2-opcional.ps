@@ -1,0 +1,89 @@
+%!PS
+% -------------------
+% PÁGINA 1 - TABLA
+
+/Times-Roman findfont
+26 scalefont
+setfont
+
+newpath
+72 750 moveto
+(Mi tabla de datos) show
+
+/Times-Roman findfont
+20 scalefont
+setfont
+
+% Líneas horizontales
+newpath
+100 680 moveto 500 680 lineto
+100 620 moveto 500 620 lineto
+100 560 moveto 500 560 lineto
+
+% Líneas verticales
+100 680 moveto 100 560 lineto
+300 680 moveto 300 560 lineto
+500 680 moveto 500 560 lineto
+
+stroke
+
+% Texto encabezado
+newpath
+130 645 moveto
+(Columna-1) show
+
+newpath
+330 645 moveto
+(Columna-2) show
+
+% Texto datos
+newpath
+130 585 moveto
+(42) show
+
+newpath
+330 585 moveto
+(21) show
+
+showpage
+
+ % FINAL PÁGINA 1
+
+% -------------------
+% Página 2 - GRÁFICA
+
+/Times-Roman findfont
+26 scalefont
+setfont
+newpath
+72 700 moveto
+(La imagen) show
+
+% Ejes
+newpath
+100 400 moveto 100 600 lineto  % Eje Y
+100 400 moveto 300 400 lineto  % Eje X
+0 setgray
+stroke
+
+% Curva cresta
+
+newpath
+100 450 moveto
+130 430 lineto
+160 480 lineto
+190 420 lineto
+220 500 lineto
+stroke
+
+% Puntos en cada vértice
+0.8 0 0 setrgbcolor
+5 setlinewidth
+
+newpath 100 450 2 0 360 arc fill
+newpath 130 430 2 0 360 arc fill
+newpath 160 480 2 0 360 arc fill
+newpath 190 420 2 0 360 arc fill
+newpath 220 500 2 0 360 arc fill
+
+showpage

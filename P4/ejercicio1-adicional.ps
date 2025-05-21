@@ -1,0 +1,163 @@
+
+/tamCelda 10 def
+
+%Relleno el fondo de blanco
+1 1 1 setrgbcolor
+newpath
+0 0 moveto
+160 0 lineto
+160 160 lineto
+0 160 lineto
+closepath
+fill
+
+%Usamos dibujaCelda para dibujar un píxel en la cuadrícula
+/dibujaCelda {
+    /b exch def
+    /g exch def
+    /r exch def
+    /y exch def
+    /x exch def
+    newpath
+    x tamCelda mul y tamCelda mul moveto
+    tamCelda 0 rlineto
+    0 tamCelda rlineto
+    tamCelda neg 0 rlineto
+    closepath
+    r g b setrgbcolor
+    fill
+} def
+
+
+%Construcción de Super Mario
+
+%Gorra
+6 15 1 0 0 dibujaCelda
+7 15 1 0 0 dibujaCelda
+8 15 1 0 0 dibujaCelda
+9 15 1 0 0 dibujaCelda
+
+5 14 1 0 0 dibujaCelda
+6 14 1 0 0 dibujaCelda
+7 14 1 0 0 dibujaCelda
+8 14 1 0 0 dibujaCelda
+9 14 1 0 0 dibujaCelda
+10 14 1 0 0 dibujaCelda
+
+4 13 1 0 0 dibujaCelda
+5 13 1 0 0 dibujaCelda
+6 13 1 0 0 dibujaCelda
+7 13 1 0 0 dibujaCelda
+8 13 1 0 0 dibujaCelda
+9 13 1 0 0 dibujaCelda
+10 13 1 0 0 dibujaCelda
+11 13 1 0 0 dibujaCelda
+
+4 12 1 0 0 dibujaCelda
+5 12 1 0.8 0.6 dibujaCelda
+6 12 1 0.8 0.6 dibujaCelda
+7 12 1 0.8 0.6 dibujaCelda
+8 12 1 0.8 0.6 dibujaCelda
+9 12 1 0.8 0.6 dibujaCelda
+10 12 1 0.8 0.6 dibujaCelda
+11 12 1 0 0 dibujaCelda
+
+%Cara
+4 11 1 0.8 0.6 dibujaCelda
+5 11 1 0.8 0.6 dibujaCelda
+6 11 1 0.8 0.6 dibujaCelda
+7 11 1 0.8 0.6 dibujaCelda
+8 11 1 0.8 0.6 dibujaCelda
+9 11 1 0.8 0.6 dibujaCelda
+10 11 1 0.8 0.6 dibujaCelda
+11 11 1 0.8 0.6 dibujaCelda
+
+%Zona de bigote y parte inferior de la cara
+4 10 1 0.8 0.6 dibujaCelda
+5 10 1 0.8 0.6 dibujaCelda
+6 10 0.4 0.2 0 dibujaCelda  
+7 10 0.4 0.2 0 dibujaCelda   
+8 10 0.4 0.2 0 dibujaCelda  
+9 10 0.4 0.2 0 dibujaCelda   
+10 10 1 0.8 0.6 dibujaCelda
+11 10 1 0.8 0.6 dibujaCelda
+
+%Cara
+4 9 1 0.8 0.6 dibujaCelda
+5 9 1 0.8 0.6 dibujaCelda
+6 9 1 0.8 0.6 dibujaCelda
+7 9 1 0.8 0.6 dibujaCelda
+8 9 1 0.8 0.6 dibujaCelda
+9 9 1 0.8 0.6 dibujaCelda
+10 9 1 0.8 0.6 dibujaCelda
+11 9 1 0.8 0.6 dibujaCelda
+
+%Cuerpo
+4 8 1 0 0 dibujaCelda
+5 8 1 0 0 dibujaCelda
+6 8 1 0 0 dibujaCelda
+7 8 1 0 0 dibujaCelda
+8 8 1 0 0 dibujaCelda
+9 8 1 0 0 dibujaCelda
+10 8 1 0 0 dibujaCelda
+11 8 1 0 0 dibujaCelda
+
+%Pantalones
+4 7 0 0 1 dibujaCelda
+5 7 0 0 1 dibujaCelda
+6 7 0 0 1 dibujaCelda
+7 7 0 0 1 dibujaCelda
+8 7 0 0 1 dibujaCelda
+9 7 0 0 1 dibujaCelda
+10 7 0 0 1 dibujaCelda
+11 7 0 0 1 dibujaCelda
+
+%Piernas y zapatos
+4 6 0 0 1 dibujaCelda
+5 6 0 0 1 dibujaCelda
+6 6 0 0 1 dibujaCelda
+7 6 0 0 1 dibujaCelda
+8 6 0.4 0.2 0 dibujaCelda
+9 6 0.4 0.2 0 dibujaCelda
+10 6 0.4 0.2 0 dibujaCelda
+11 6 0.4 0.2 0 dibujaCelda
+
+%Piernas
+4 5 0 0 1 dibujaCelda
+5 5 0 0 1 dibujaCelda
+6 5 0 0 1 dibujaCelda
+7 5 0 0 1 dibujaCelda
+8 5 0.4 0.2 0 dibujaCelda
+9 5 0.4 0.2 0 dibujaCelda
+10 5 0.4 0.2 0 dibujaCelda
+11 5 0.4 0.2 0 dibujaCelda
+
+%Zapatos
+4 4 0.4 0.2 0 dibujaCelda
+5 4 0.4 0.2 0 dibujaCelda
+6 4 0.4 0.2 0 dibujaCelda
+7 4 0.4 0.2 0 dibujaCelda
+8 4 0.4 0.2 0 dibujaCelda
+9 4 0.4 0.2 0 dibujaCelda
+10 4 0.4 0.2 0 dibujaCelda
+11 4 0.4 0.2 0 dibujaCelda
+
+
+%Dibujamos la M en la gorra
+/Courier-Bold findfont 10 scalefont setfont
+1 1 1 setrgbcolor
+76 144 moveto
+(M) show
+
+%Dibujamos los ojos
+6 12 0 0 0 dibujaCelda
+9 12 0 0 0 dibujaCelda
+
+%Dibujamos la boca
+newpath
+80 95 3 0 360 arc
+closepath
+0 0 0 setrgbcolor
+fill
+
+showpage
